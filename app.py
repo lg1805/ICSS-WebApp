@@ -8,7 +8,7 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads/processed/'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-RPN_FILE = r"D:\Lakshya\Project\ICSS_VSCode\PROJECT\ProcessedData\RPN.xlsx"
+RPN_FILE = os.path.join("ICSS-WebApp_Ready", "RPN.xlsx")
 rpn_data = pd.read_excel(RPN_FILE)
 known_components = rpn_data["Component"].dropna().unique().tolist()
 
